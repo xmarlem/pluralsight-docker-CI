@@ -12,6 +12,8 @@ RUN yum install -y npm
 COPY . /src
 
 # Install app and dependencies into /src
+RUN npm config set strict-ssl false
+
 RUN cd /src; npm install
 
 EXPOSE 8080
